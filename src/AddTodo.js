@@ -1,28 +1,29 @@
 import './AddTodo.css';
 import {Component} from 'react';
 
+
 class AddTodo extends Component{
 
   constructor(props){
     super(props)
     this.state = {
-      todo : ''
+      description : ''
     }
   }
 
   handleSubmit = (e) =>{
     e.preventDefault()
-    if(this.state.todo !== ''){
-    this.props.addTodo(this.state.todo)
+    if(this.state.description !== ''){
+    this.props.addTodo(this.state)
     }
     this.setState({
-      todo : ''
+      description : ''
     })
   }
 
   handleChange = (e) =>{
     this.setState({
-      todo : e.target.value
+      description : e.target.value
     })
   }
 
@@ -38,7 +39,7 @@ class AddTodo extends Component{
           type = {Text}
           name = 'todo'
           id = 'todo'
-          value = {this.state.todo}
+          value = {this.state.description}
           onChange = {this.handleChange}
           >
           

@@ -8,7 +8,7 @@ class TodoList extends Component{
   constructor(props){
     super(props)
     this.state = {
-      todos : ['Do the dishes', 'Have a walk']
+      todos : [{description : 'Do the dishes', id : ''}, {description : 'Have a walk', id : ''}]
     }
   }
 
@@ -34,7 +34,7 @@ class TodoList extends Component{
 
             {this.state.todos.map(todo =>{
               return(
-                <Todo descr = {todo} />
+                <Todo descr = {todo.description} />
               )
             })}
 
