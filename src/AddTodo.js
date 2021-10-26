@@ -44,8 +44,6 @@ class AddTodo extends Component{
           
           </input>
 
-          <button>Add todo!</button>
-
         </form>
 
       </div>
