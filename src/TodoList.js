@@ -20,6 +20,7 @@ class TodoList extends Component{
   } 
   
   render(){
+    console.log(this.state.todos[0].id)
     return(
       <div className = "mainTodoDiv">
 
@@ -35,7 +36,7 @@ class TodoList extends Component{
 
             {this.state.todos.map(todo =>{
               return(
-                <div className = "todoDiv"> 
+                <div className = "todoDiv" key = {uuidv4()}> 
 
                   <Todo descr = {todo.description} key = {this.id}/>
 
