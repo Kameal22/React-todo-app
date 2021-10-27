@@ -10,15 +10,9 @@ class Todo extends Component{
     }
   }
 
-  crossOut = () =>{
+  toggleTodo = () =>{
     this.setState({
-      isDone : true
-    })
-  }
-
-  undo = () =>{
-    this.setState({
-      isDone : false
+      isDone : !this.state.isDone
     })
   }
 
@@ -26,7 +20,7 @@ class Todo extends Component{
     return(
       <li
       className = {this.state.isDone ? 'doneTodo' : 'todo'}
-      onClick = {this.state.isDone ? this.undo : this.crossOut}>
+      onClick = {this.toggleTodo}>
       {this.props.descr}
       </li>
     )

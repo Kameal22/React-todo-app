@@ -36,7 +36,7 @@ class AddTodo extends Component{
           <label htmlFor = "todo"></label>
 
           <input
-          type = {Text}
+          type = 'text'
           name = 'todo'
           id = 'todo'
           value = {this.state.description}

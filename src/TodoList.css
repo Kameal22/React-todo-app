@@ -27,3 +27,20 @@
     margin-left: auto;
     border: 1px solid ivory;
 }
+
+.todoDiv{
+    width: 90%;
+    display: flex;
+    justify-content: space-between;
+    color: ivory;
+}
+
+.todoDiv svg{
+    cursor: pointer;
+}
+
+.iconsDiv{
+    width: 10%;
+    display: flex;
+    justify-content: space-between;
+}
