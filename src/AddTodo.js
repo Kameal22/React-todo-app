@@ -1,13 +1,14 @@
 import './AddTodo.css';
 import {Component} from 'react';
-
+import { v4 as uuidv4 } from 'uuid';
 
 class AddTodo extends Component{
 
   constructor(props){
     super(props)
     this.state = {
-      description : ''
+      description : '',
+      id : ''
     }
   }
 
@@ -17,13 +18,15 @@ class AddTodo extends Component{
     this.props.addTodo(this.state)
     }
     this.setState({
-      description : ''
+      description : '',
+      id : ''
     })
   }
 
   handleChange = (e) =>{
     this.setState({
-      description : e.target.value
+      description : e.target.value,
+      id : e.target.id 
     })
   }
 
@@ -38,7 +41,7 @@ class AddTodo extends Component{
           <input
           type = 'text'
           name = 'todo'
-          id = 'todo'
+          id = {uuidv4()}
           value = {this.state.description}
           onChange = {this.handleChange}
           >
