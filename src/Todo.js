@@ -36,6 +36,11 @@ class Todo extends Component{
 
   handleSubmit = (e) =>{
     e.preventDefault()
+    alert(this.state.editedTodo)
+    this.setState({
+      editedTodo : '',
+      isEditing : !this.state.isEditing
+    })
   }
 
   render(){
