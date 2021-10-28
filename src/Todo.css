@@ -11,3 +11,10 @@
     text-decoration: line-through;
 }
 
+.formEditDiv{
+    margin-right: 4em;
+}
+
+.formEditDiv input{
+    width: 80%;
+}

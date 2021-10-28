@@ -2,14 +2,13 @@ import './TodoList.css';
 import {Component} from 'react'
 import Todo from './Todo';
 import AddTodo from './AddTodo';
-import { v4 as uuidv4 } from 'uuid';
 
 class TodoList extends Component{
 
   constructor(props){
     super(props)
     this.state = {
-      todos : [{description : 'Do the dishes', id : uuidv4()}, {description : 'Have a walk', id : uuidv4()}]
+      todos : []
     }
   }
 
@@ -18,6 +17,10 @@ class TodoList extends Component{
       todos : [...state.todos, newTodo]
     }))
   } 
+
+  editTodo = (editedTodo) =>{
+    
+  }
 
   removeTodo = (id) => {
     this.setState({
