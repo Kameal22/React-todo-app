@@ -18,8 +18,19 @@ class TodoList extends Component{
     }))
   } 
 
-  editTodo = (editedTodo) =>{
-    
+  editTodo = (id, value) =>{
+    let editingTodo = this.state.todos.find(todo => todo.id === id)
+
+    const newTodos = this.state.todos.map(todo =>{
+      if(todo.id === editingTodo.id){
+        return {...todo, description : value}
+      }
+      return todo
+    })
+
+    this.setState({
+      todos : newTodos
+    })
   }
 
   removeTodo = (id) => {
@@ -44,7 +55,8 @@ class TodoList extends Component{
 
             {this.state.todos.map(todo =>{
               return(
-                  <Todo descr = {todo.description} key = {todo.id} id = {todo.id} removeTodo = {this.removeTodo}/>
+                  <Todo descr = {todo.description} key = {todo.id} id = {todo.id} removeTodo = {this.removeTodo}
+                   editTodo = {this.editTodo}/>
               )
             })}
 

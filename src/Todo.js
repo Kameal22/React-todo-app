@@ -36,8 +36,7 @@ class Todo extends Component{
 
   handleSubmit = (e) =>{
     e.preventDefault()
-    console.log(this.state.editedTodo) // <= Edited todo Data to pass to parent
-    console.log(this.props.id) // <= ID of edited todo (I hope so)
+    this.props.editTodo(this.props.id, this.state.editedTodo)
     this.setState({
       editedTodo : '',
       isEditing : !this.state.isEditing
