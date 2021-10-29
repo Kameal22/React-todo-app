@@ -1,5 +1,5 @@
 .formDiv{
-    width: 50%;
+    width: 70%;
     height: 6vh;
     border: 2px solid ivory;
     text-align: center;
@@ -14,7 +14,7 @@ input{
 }
 
 .formDiv h2{
-    width: 30%;
+    width: 50%;
     margin-left: 1em;
     font-size: 1.2em;
     color: ivory;

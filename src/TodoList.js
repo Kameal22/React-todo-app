@@ -8,25 +8,14 @@ class TodoList extends Component{
   constructor(props){
     super(props)
     this.state = {
-      todos : [],
-      todoLimit : 12,
-      isLimited : false  //ADD SCROLLBAR INSTEAD OF TODO LIMIT
+      todos : []
     }
   }
   
   addTodo = (newTodo) =>{
-
-    if(this.state.todos.length !== this.state.todoLimit){
-
     this.setState(state =>({
       todos : [...state.todos, newTodo]
     }))
-    
-    }else{
-      this.setState({
-        isLimited : true
-      })
-    }
   }
 
   editTodo = (id, value) =>{
@@ -46,18 +35,16 @@ class TodoList extends Component{
   removeTodo = (id) => {
     this.setState({
       todos : this.state.todos.filter(todo => todo.id !== id),
-      isLimited : false
     })
   }
   
   render(){
-    console.log(this.state.todos.length)
     return(
       <div className = "mainTodoDiv">
 
         <div className = "test">
 
-          <h1>{this.state.isLimited ? 'Todo limit reached' : 'Todo app!'}</h1>
+          <h1>Todo app!</h1>
 
         </div>
 

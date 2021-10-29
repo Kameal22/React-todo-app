@@ -19,6 +19,8 @@ class AddTodo extends Component{
       // Add error when user tries to add an empty TODO.
 
     this.props.addTodo(this.state)
+    }else{
+      alert('no empty todos')
     }
     this.setState({
       description : '',
@@ -46,6 +48,7 @@ class AddTodo extends Component{
           <input
           type = 'text'
           name = 'todo'
+          placeholder = 'add todo'
           id = {uuidv4()}
           value = {this.state.description}
           onChange = {this.handleChange}
