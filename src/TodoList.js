@@ -10,7 +10,7 @@ class TodoList extends Component{
     this.state = {
       todos : [],
       todoLimit : 12,
-      isLimited : false
+      isLimited : false  //ADD SCROLLBAR INSTEAD OF TODO LIMIT
     }
   }
   
@@ -30,10 +30,9 @@ class TodoList extends Component{
   }
 
   editTodo = (id, value) =>{
-    let editingTodo = this.state.todos.find(todo => todo.id === id)
 
     const newTodos = this.state.todos.map(todo =>{
-      if(todo.id === editingTodo.id){
+      if(todo.id === id){
         return {...todo, description : value}
       }
       return todo
@@ -68,8 +67,12 @@ class TodoList extends Component{
 
             {this.state.todos.map(todo =>{
               return(
-                  <Todo descr = {todo.description} key = {todo.id} id = {todo.id} removeTodo = {this.removeTodo}
-                   editTodo = {this.editTodo}/>
+                  <Todo
+                   descr = {todo.description}
+                    key = {todo.id}
+                    id = {todo.id}
+                    removeTodo = {this.removeTodo}
+                    editTodo = {this.editTodo}/>
               )
             })}
 

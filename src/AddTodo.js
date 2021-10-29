@@ -15,6 +15,9 @@ class AddTodo extends Component{
   handleSubmit = (e) =>{
     e.preventDefault()
     if(this.state.description !== ''){
+
+      // Add error when user tries to add an empty TODO.
+
     this.props.addTodo(this.state)
     }
     this.setState({
