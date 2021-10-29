@@ -8,15 +8,26 @@ class TodoList extends Component{
   constructor(props){
     super(props)
     this.state = {
-      todos : []
+      todos : [],
+      todoLimit : 12,
+      isLimited : false
     }
   }
-
+  
   addTodo = (newTodo) =>{
+
+    if(this.state.todos.length !== this.state.todoLimit){
+
     this.setState(state =>({
       todos : [...state.todos, newTodo]
     }))
-  } 
+    
+    }else{
+      this.setState({
+        isLimited : true
+      })
+    }
+  }
 
   editTodo = (id, value) =>{
     let editingTodo = this.state.todos.find(todo => todo.id === id)
@@ -35,17 +46,19 @@ class TodoList extends Component{
 
   removeTodo = (id) => {
     this.setState({
-      todos : this.state.todos.filter(todo => todo.id !== id)
+      todos : this.state.todos.filter(todo => todo.id !== id),
+      isLimited : false
     })
   }
   
   render(){
+    console.log(this.state.todos.length)
     return(
       <div className = "mainTodoDiv">
 
         <div className = "test">
 
-          <h1>Todo app!</h1>
+          <h1>{this.state.isLimited ? 'Todo limit reached' : 'Todo app!'}</h1>
 
         </div>
 

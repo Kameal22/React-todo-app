@@ -1,9 +1,21 @@
 .formDiv{
     width: 50%;
-    border: 1px solid yellow;
+    height: 6vh;
+    border: 2px solid ivory;
     text-align: center;
+    margin-bottom: 2vh;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
 }
 
 input{
-   width: 50%;
+   width: 70%;
+}
+
+.formDiv h2{
+    width: 30%;
+    margin-left: 1em;
+    font-size: 1.2em;
+    color: ivory;
 }

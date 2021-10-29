@@ -2,10 +2,13 @@
     width: 30%;
     height: 65vh;
     margin: 10vh auto;
-    border: 1px solid ivory;
+    border: 2px solid ivory;
+    background: rgb(33,65,82);
+    border-radius: 5px;
 
     display: flex;
     flex-direction: column;
+    justify-content: space-between;
     align-items: center;
 }
 
@@ -13,7 +16,8 @@
     width: 50%;
     margin-left: auto;
     margin-right: auto;
-    border: 1px solid magenta;
+    margin-top: 2vh;
+    border: 2px solid ivory;
     height: 6vh;
     color: ivory;
     display: flex;
@@ -23,6 +27,7 @@
 
 .todoListDiv{
     width: 100%;
+    height: 50%;
     margin-right: auto;
     margin-left: auto;
     border: 1px solid ivory;

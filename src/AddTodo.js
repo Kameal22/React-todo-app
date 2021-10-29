@@ -34,6 +34,8 @@ class AddTodo extends Component{
     return(
       <div className = "formDiv">
 
+        <h2>Add todo</h2>
+
         <form onSubmit = {this.handleSubmit}>
 
           <label htmlFor = "todo"></label>
